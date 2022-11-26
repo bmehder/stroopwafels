@@ -1,11 +1,26 @@
 <script lang="ts">
   import { viewport } from '../viewport'
   import { isOpen, isShowBackToTop } from '../store'
-  import { browser } from '$app/environment'
+  // import { browser } from '$app/environment'
 
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
-  import Loading from './Loading.svelte'
+  // import Loading from './Loading.svelte'
+
+  type Items = { name: string; url?: string; children?: Items }[]
+
+  export let items: Items = [
+    { name: 'Home', url: '/' },
+    {
+      name: 'About',
+      url: '/about',
+      children: [
+        { name: 'Team', url: '/team' },
+        { name: 'Careers', url: '/careers' },
+      ],
+    },
+  ]
+  export let logo: string = 'Logo'
 
   const BREAKPOINT = 768
 
@@ -16,13 +31,13 @@
 
   $: innerWidth > BREAKPOINT && closeNav()
 
-  $: if (browser && $isOpen) document.body.style.position = 'fixed'
-  $: if (browser && !$isOpen) document.body.style.position = 'relative'
+  // $: if (browser && $isOpen) document.body.style.position = 'fixed'
+  // $: if (browser && !$isOpen) document.body.style.position = 'relative'
 </script>
 
 <svelte:window bind:innerWidth />
 
-<Loading />
+<!-- <Loading /> -->
 
 <header
   class:isOpen={$isOpen}
@@ -31,7 +46,7 @@
   on:exitViewport={() => ($isShowBackToTop = true)}
 >
   <div>
-    <Nav on:click={closeNav} />
+    <Nav on:click={closeNav} {items} {logo} />
     <Hamburger on:click={toggleNav} />
   </div>
 </header>
@@ -46,7 +61,7 @@
     position: fixed;
     width: 100%;
     min-height: 100vh;
-    z-index: 1;
+    z-index: 10;
   }
   div {
     display: flex;
@@ -54,7 +69,12 @@
     align-items: center;
     max-width: var(--width, 100%);
     margin-inline: auto;
-    padding-inline: 2rem;
+    /* padding-inline: 2rem; */
+  }
+  @media screen and (max-width: 1100px) {
+    div {
+      padding-inline: 2rem;
+    }
   }
   @media screen and (max-width: 768px) {
     div {

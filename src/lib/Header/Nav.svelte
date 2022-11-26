@@ -1,7 +1,12 @@
-<script>
+<script lang="ts">
   import { isOpen } from '../store'
 
   import DarkMode from '../DarkMode.svelte'
+
+  type Items = { name: string; url?: string; children?: Items }[]
+
+  export let items: Items
+  export let logo: string = 'Logo'
 
   const handleClick = async () => {
     $isOpen = false
@@ -9,51 +14,24 @@
 </script>
 
 <nav class:isOpen={$isOpen}>
-  <h1><a on:click={handleClick} href="/">Logo</a></h1>
+  <h1><a on:click={handleClick} href="/">{logo}</a></h1>
   <ul>
-    <li><a on:click={handleClick} href="/">Home</a></li>
-    <li>
-      <a on:click={handleClick} href="/about">About</a>
-      <ul>
-        <li><a on:click={handleClick} href="/team">Team</a></li>
-        <li><a on:click={handleClick} href="/careers">Careers</a></li>
-      </ul>
-    </li>
-    <li><a on:click={handleClick} href="/faqs" data-sveltekit-prefetch>FAQ</a></li>
-    <li>
-      <a on:click={handleClick} href="/blog">Blog</a>
-      <ul>
-        <li>
-          <a on:click={handleClick} href="/blog/categories" data-sveltekit-prefetch
-            >Categories</a
-          >
-        </li>
-        <li>
-          <a on:click={handleClick} href="/blog/authors" data-sveltekit-prefetch
-            >Authors</a
-          >
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a on:click={handleClick} href="/shop" data-sveltekit-prefetch>Shop</a>
-      <ul>
-        <li>
-          <a on:click={handleClick} href="/shop/categories" data-sveltekit-prefetch
-            >Categories</a
-          >
-        </li>
-      </ul>
-    </li>
-    <li>
-      <a on:click={handleClick} href="/services" data-sveltekit-prefetch>Services</a>
-      <ul>
-        <li><a on:click={handleClick} href="/reviews">Reviews</a></li>
-      </ul>
-    </li>
-    <li>
-      <a on:click={handleClick} href="/contact">Contact</a>
-    </li>
+    {#each items as item}
+      <li>
+        <a on:click={handleClick} href={item.url}>{@html item.name}</a>
+        {#if item.children}
+          <ul>
+            {#each item.children as childItem}
+              <li>
+                <a on:click={handleClick} href={childItem.url}
+                  >{@html childItem.name}</a
+                >
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </li>
+    {/each}
     <li on:click={handleClick} on:keypress><DarkMode --width="1.5rem" /></li>
   </ul>
 </nav>

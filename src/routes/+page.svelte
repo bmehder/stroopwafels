@@ -20,7 +20,7 @@
   </div>
 </header> -->
 
-<Header --background="#323232" --color="white" --width="1100px" />
+<Header --background="#323232" --color="white" --width="1100px" logo="My Logo" />
 
 <div>
   <Slider color="white" />
