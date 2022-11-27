@@ -36,13 +36,14 @@
       options: { top: '50%', left: '50%' },
     },
   ]
+
   export let duration = 6000
   export let color = 'white'
+  export let isAutoplay = false
 
-  let container: HTMLElement
+  let container: HTMLDivElement
   let innerWidth: number
   let intervalId: number
-  let isAutoplay = true
   let xPosition = 0
 
   const stopAutoPlay = () => clearInterval(intervalId)

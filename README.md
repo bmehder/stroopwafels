@@ -12,6 +12,7 @@ A collection of Svelte components
   - ClickOutside
 - Tabs
 - Header
+- Footer
 - DarkMode
 - BackToTop
 

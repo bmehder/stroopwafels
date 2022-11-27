@@ -3,22 +3,10 @@
   import Sveltetube from '$lib/Sveltetube.svelte'
   import Prism from '$lib/Prism/Prism.svelte'
   import { viewport } from '$lib/viewport'
-  import { clickOutside } from '$lib/clickoutside'
   import BackToTop from '$lib/BackToTop.svelte'
-  import { isShowBackToTop } from '$lib/store'
   import Header from '$lib/Header/Header.svelte'
+  import Footer from '$lib/Footer.svelte'
 </script>
-
-<!-- <header
-  use:clickOutside={() => console.log('clicked outside')}
-  use:viewport
-  on:enterViewport={() => ($isShowBackToTop = false)}
-  on:exitViewport={() => ($isShowBackToTop = true)}
->
-  <div>
-    <h1>Tom Foolery Components</h1>
-  </div>
-</header> -->
 
 <Header --background="#323232" --color="white" --width="1100px" logo="My Logo" />
 
@@ -77,16 +65,9 @@
 
 <BackToTop />
 
+<Footer --padding="2rem" />
+
 <style>
-  header {
-    background-color: #323232;
-    color: white;
-  }
-  header div {
-    max-width: 1100px;
-    margin-inline: auto;
-    padding-block: 2rem;
-  }
   section {
     max-width: 800px;
     margin-block: 2rem;

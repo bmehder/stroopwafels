@@ -9,7 +9,6 @@
         behavior: 'smooth',
       })
   }
-  $: console.log($isShowBackToTop)
 </script>
 
 <div class:visible={$isShowBackToTop} on:click={handleClick} on:keypress>
