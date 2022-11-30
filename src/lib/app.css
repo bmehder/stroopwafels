@@ -52,7 +52,7 @@ ol {
 img,
 iframe {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 sup,
@@ -100,10 +100,12 @@ input[type="submit"] {
 /* LAYOUT */
 
 main {
+  width: 100%;
   max-width: 1100px;
   margin-inline: auto;
   padding-block: calc(var(--spacing) * 1.5);
   padding-inline: var(--spacing);
+  overflow: auto;
 }
 
 main>*+* {
@@ -117,6 +119,12 @@ section > div {
   gap: var(--spacing);
   max-width: 1100px;
   margin-inline: auto;
+}
+
+.auto-format {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
 }
 
 .grid {
