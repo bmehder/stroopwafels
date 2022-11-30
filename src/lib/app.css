@@ -9,55 +9,31 @@
   --radius: 0.25rem;
 }
 
+*, *::before, *::after {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  height: 100%;
-  position: relative;
   background-color: var(--white);
-  color: #323232;
+  color: var(--black);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-.dark {
-  background-color: #242424;
-  color: var(--white);
-}
-
 /* BASIC ELEMENTS */
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-blockquote {
-  margin-top: var(--spacing);
-  line-height: 1.5em;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-ul,
-ol {
-  padding-left: calc(var(--spacing) + 1rem);
-}
-
-img {
-  display: block;
-}
 
 a {
   color: var(--light);
@@ -66,6 +42,37 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+ul,
+ol {
+  padding-inline-start: calc(var(--spacing) + 0.5rem);
+}
+
+img,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+sup,
+sub {
+  font-size: 0.75rem;
+  line-height: 0;
+}
+
+blockquote {
+  padding: 2.5rem;
+  background-color: var(--light);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+input,
+textarea, button, input[type='submit'] {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 button,
@@ -77,26 +84,37 @@ input[type='submit'] {
   color: white;
   border: none;
   border-radius: var(--radius);
-  font-family: inherit;
-  font-size: inherit;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-sup,
-sub {
-  font-size: 0.75rem;
-  line-height: 0;
-}
-
-blockquote {
-  padding: 2.5rem;
-  font-size: 1.25rem;
-  font-style: italic;
+a,
+button,
+select,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
 }
 
 /* LAYOUT */
-section>div {
+
+main {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-block: calc(var(--spacing) * 1.5);
+  padding-inline: var(--spacing);
+}
+
+main>*+* {
+  margin-top: var(--spacing);
+  line-height: 1.5;
+}
+
+section > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
   max-width: 1100px;
   margin-inline: auto;
 }
@@ -116,7 +134,13 @@ section>div {
     gap: calc(var(--spacing) * 2);
   }
 }
+
 /* UTILITIES */
+
+.dark {
+  background-color: #242424;
+  color: var(--white);
+}
 
 .clamp {
   --numberOfLines: 4;

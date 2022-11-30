@@ -12,25 +12,21 @@
 </aside>
 
 <main class:isOutline class:isBackground>
-  <h1>Anker's popular Eufy-branded security cameras</h1>
+  <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
 
-  <h2>
-    Anker's Eufy Cameras Caught Uploading Content to the Cloud Without User Consent
-  </h2>
-
-  <h3>Secondary Heading</h3>
+  <h2>Tempora nisi dolores doloremque</h2>
 
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
     doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse voluptatem
     delectus repudiandae dolor facere, quaerat temporibus recusandae eligendi animi
-    ipsa ea. Eos neque at reiciendis dolore voluptatibus dicta ipsam quia beatae
-    suscipit in deleniti, facilis quo doloribus esse itaque rem nam, aspernatur, ut
-    molestiae possimus ducimus laboriosam. Numquam voluptas error distinctio eum
-    officia alias qui tempore eveniet quibusdam obcaecati? Quae voluptates soluta
-    assumenda animi ullam tempora alias voluptatum. Cumque aliquid, velit sit quos a
-    dolores repellat earum saepe accusantium non reprehenderit, molestias culpa,
-    debitis tempora facilis impedit excepturi unde.
+    ipsa ea. Eos neque at <a href="">reiciendis</a> dolore voluptatibus dicta ipsam quia
+    beatae suscipit in deleniti, facilis quo doloribus esse itaque rem nam, aspernatur,
+    ut molestiae possimus ducimus laboriosam. Numquam voluptas error distinctio eum officia
+    alias qui tempore eveniet quibusdam obcaecati? Quae voluptates soluta assumenda animi
+    ullam tempora alias voluptatum. Cumque aliquid, velit sit quos a dolores repellat
+    earum saepe accusantium non reprehenderit, molestias culpa, debitis tempora facilis
+    impedit excepturi unde.
   </p>
   <ul>
     <li>One</li>
@@ -66,7 +62,7 @@
     </p>
   </div>
 
-  <div class="grid auto">
+  <div class="grid columns">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
       doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse
@@ -162,62 +158,11 @@
     dolores repellat earum saepe accusantium non reprehenderit, molestias culpa,
     debitis tempora facilis impedit excepturi unde.
   </p>
+
+  <button>Button</button>
 </main>
 
 <style>
-  main {
-    --spacing: 1.5rem;
-    max-width: 1100px;
-    margin-inline: auto;
-    padding-block: var(--spacing) calc(var(--spacing) * 2);
-    padding-inline: var(--spacing);
-  }
-
-  h1,
-  h2,
-  h3,
-  p,
-  ul,
-  ol,
-  blockquote {
-    margin-top: var(--spacing);
-  }
-
-  h1 {
-    margin-top: 0;
-  }
-
-  ul,
-  ol {
-    padding-inline-start: calc(var(--spacing) + 1rem);
-  }
-
-  blockquote {
-    padding: var(--spacing);
-    background-color: #ededed;
-  }
-
-  .grid {
-    display: grid;
-  }
-
-  .auto {
-    gap: var(--spacing);
-  }
-
-  @media (min-width: 769px) {
-    .grid {
-      display: grid;
-      gap: calc(var(--spacing) * 2);
-    }
-    .columns {
-      grid-auto-flow: column;
-    }
-    .auto {
-      grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-    }
-  }
-
   /* Controls */
   aside {
     position: fixed;

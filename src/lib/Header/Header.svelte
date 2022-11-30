@@ -57,32 +57,22 @@
     background-color: var(--background, var(--black));
     color: var(--color);
   }
-  header.isOpen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    z-index: 10;
-  }
   div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: var(--width, 100%);
     margin-inline: auto;
-    /* padding-inline: 2rem; */
+    padding-inline: var(--padding, 1.5rem);
   }
-  @media screen and (max-width: 1100px) {
-    div {
-      padding-inline: 2rem;
-    }
+  .isOpen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 10;
   }
-  @media screen and (max-width: 768px) {
-    div {
-      padding-inline: 2rem;
-    }
-    .isOpen div {
-      align-items: unset;
-    }
+  .isOpen div {
+    align-items: unset;
   }
 </style>

@@ -8,18 +8,13 @@
 
 <style>
   footer {
-    background-color: var(--background, #323232);
-    color: var(--color, white);
+    background-color: var(--background, var(--black));
+    color: var(--color, var(--white));
   }
   div {
     max-width: var(--width, 1100px);
     margin-inline: auto;
-    padding-block: var(--padding, 1.5rem);
-    padding-inline: 2rem;
-  }
-  @media (min-width: 1100px) {
-    div {
-      padding-inline: 0;
-    }
+    padding-block: var(--padding, var(--spacing));
+    padding-inline: var(--spacing);
   }
 </style>

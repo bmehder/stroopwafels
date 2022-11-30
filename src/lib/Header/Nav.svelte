@@ -58,6 +58,7 @@
   }
   li {
     position: relative;
+    color: white;
   }
   li:hover ul {
     display: block;
