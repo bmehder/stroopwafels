@@ -27,6 +27,7 @@
     background-color: var(--dark, #323232);
     color: white;
     border: none;
+    border-radius: 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
     transform: translateY(-50%);
     transition: all 200ms ease-in-out;

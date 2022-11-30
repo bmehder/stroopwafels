@@ -14,7 +14,7 @@
 </script>
 
 <nav class:isOpen={$isOpen}>
-  <h1><a on:click={handleClick} href="/">{logo}</a></h1>
+  <h1><a on:click={handleClick} href="/">{@html logo}</a></h1>
   <ul>
     {#each items as item}
       <li>
@@ -45,6 +45,9 @@
     width: 100%;
     display: flex;
     align-items: center;
+  }
+  nav h1 a:hover {
+    text-decoration: none;
   }
   ul {
     display: flex;

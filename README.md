@@ -7,9 +7,8 @@ A collection of Svelte components
 - SvelteTube
 - Prism
 - Slider
-- Actions
-  - Viewport
-  - ClickOutside
+- Viewport action
+- ClickOutside action
 - Tabs
 - Header
 - Footer
