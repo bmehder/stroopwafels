@@ -91,23 +91,11 @@ sub {
 
 blockquote {
   padding: 2.5rem;
-  background-color: var(--light);
-  color: var(--white);
   font-size: 1.25rem;
   font-style: italic;
 }
 
 /* LAYOUT */
-
-/* .grid {
-  display: grid;
-  gap: var(--spacing);
-}
-
-.auto-grid {
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-} */
-
 section>div {
   max-width: 1100px;
   margin-inline: auto;
@@ -136,11 +124,4 @@ section>div {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--numberOfLines);
   overflow: hidden;
-}
-
-/* HACK */
-
-header li,
-header i {
-  color: white;
 }
