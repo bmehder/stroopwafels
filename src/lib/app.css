@@ -49,10 +49,9 @@ ol {
   padding-inline-start: calc(var(--spacing) + 0.5rem);
 }
 
-img,
-iframe {
+img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 sup,
@@ -105,6 +104,10 @@ main {
   margin-inline: auto;
   padding-block: calc(var(--spacing) * 1.5);
   padding-inline: var(--spacing);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
   overflow: auto;
 }
 

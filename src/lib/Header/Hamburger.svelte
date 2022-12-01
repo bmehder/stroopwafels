@@ -20,7 +20,7 @@
 
 <style>
   i.isOpen {
-    padding-top: 0.5rem;
+    padding-top: 0.8rem;
     color: white;
   }
   @media screen and (min-width: 769px) {
