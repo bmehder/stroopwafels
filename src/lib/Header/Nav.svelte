@@ -96,6 +96,9 @@
     ul {
       display: none;
     }
+    :global(body:has(.isOpen)) {
+      position: fixed;
+    }
     .isOpen ul {
       display: flex;
       flex-direction: column;
@@ -106,11 +109,12 @@
       border-bottom: 2px solid white;
     }
     ul ul {
-      display: none !important;
       position: relative;
       gap: 1rem;
-      margin-left: 0.25rem;
-      padding-bottom: 0;
+      padding-block-start: var(--spacing);
+      padding-inline-start: calc(var(--spacing) * 2);
+      padding-block-end: 0;
+      overflow: scroll;
     }
     .isOpen ul ul li {
       border-bottom: none;

@@ -67,9 +67,4 @@
     padding: 1rem 1.5rem;
     line-height: 1.4em;
   }
-  @media screen and (min-width: 768px) {
-    aside {
-      max-width: 50%;
-    }
-  }
 </style>

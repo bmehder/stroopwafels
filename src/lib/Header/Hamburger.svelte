@@ -19,9 +19,11 @@
 {/if}
 
 <style>
+  i {
+    color: white;
+  }
   i.isOpen {
     padding-top: 0.8rem;
-    color: white;
   }
   @media screen and (min-width: 769px) {
     i {

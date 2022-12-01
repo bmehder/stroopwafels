@@ -1,11 +1,9 @@
 <script lang="ts">
   import { viewport } from '../viewport'
   import { isOpen, isShowBackToTop } from '../store'
-  // import { browser } from '$app/environment'
 
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
-  // import Loading from './Loading.svelte'
 
   type Items = { name: string; url?: string; children?: Items }[]
 
@@ -30,14 +28,9 @@
   const toggleNav = () => ($isOpen = !$isOpen)
 
   $: innerWidth > BREAKPOINT && closeNav()
-
-  // $: if (browser && $isOpen) document.body.style.position = 'fixed'
-  // $: if (browser && !$isOpen) document.body.style.position = 'relative'
 </script>
 
 <svelte:window bind:innerWidth />
-
-<!-- <Loading /> -->
 
 <header
   class:isOpen={$isOpen}
