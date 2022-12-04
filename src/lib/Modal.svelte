@@ -32,7 +32,7 @@
 
 <svelte:window on:keydown={evt => evt.key === 'Escape' && dispatch('escape')} />
 
-<div>
+<div class:isOpen>
   <dialog bind:this={dialogElement} use:closeModal>
     <slot />
     <span on:click on:keypress>X</span>
@@ -40,6 +40,9 @@
 </div>
 
 <style>
+  :global(body :has(.isOpen)) {
+    position: fixed;
+  }
   div {
     display: flex;
     flex-direction: column;
@@ -50,15 +53,15 @@
   dialog[open] {
     margin: auto;
     padding: 2rem;
-    background: var(--white);
+    background: var(--background, var(--white));
+    color: var(--color, var(--black));
     border: none;
     border-radius: var(--radius);
     box-shadow: 0 1em 2em rgb(0 0 0 / 0.25);
     overflow: visible;
   }
   dialog::backdrop {
-    background: black;
-    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.9);
   }
   span {
     display: grid;
@@ -68,11 +71,10 @@
     right: -1rem;
     width: calc(var(--spacing) * 1.5);
     height: calc(var(--spacing) * 1.5);
-    background: var(--light);
-    color: var(--white);
+    background: var(--closeBackground, var(--light));
+    color: var(--closeColor, var(--white));
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1;
   }
   span:hover {
     scale: 0.95;

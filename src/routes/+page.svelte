@@ -60,6 +60,11 @@
           bind:isOpen
           on:click={() => (isOpen = false)}
           on:escape={() => (isOpen = false)}
+          --background="var(--white)"
+          --color="var(--black)"
+          --closeBackground="var(--light)"
+          --closeColor="white"
+          --backdrop="rgba(0, 0, 0, 0.9)"
         >
           <div class="auto-format">
             <h2>I am a Modal!</h2>

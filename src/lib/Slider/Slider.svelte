@@ -184,8 +184,8 @@
       height: 90vh;
     }
     h2 {
-      top: 20% !important;
-      left: 50% !important;
+      /* top: 20% !important;
+      left: 50% !important; */
       font-size: 5rem;
     }
   }
