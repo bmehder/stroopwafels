@@ -169,6 +169,7 @@ section>div, .auto-format {
 .dark {
   background-color: #242424;
   color: var(--white);
+  color-scheme: dark light;
 }
 
 .clamp {

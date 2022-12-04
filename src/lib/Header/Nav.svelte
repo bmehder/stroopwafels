@@ -25,7 +25,7 @@
           <ul>
             {#each item.children as childItem}
               <li>
-                <a on:click={handleClick} href={childItem.url}
+                <a on:click={handleClick} href={childItem.url} target={item.target}
                   >{@html childItem.name}</a
                 >
               </li>
