@@ -1,14 +1,24 @@
 <script>
   import '$lib/app.css'
-  import BackToTop from '$lib/BackToTop.svelte'
-  import Footer from '$lib/Footer.svelte'
+  import { page } from '$app/stores'
+  import Slider from '$lib/Slider/Slider.svelte'
   import Header from '$lib/Header/Header.svelte'
+  import Footer from '$lib/Footer.svelte'
+  import BackToTop from '$lib/BackToTop.svelte'
 </script>
 
-<Header --background="#323232" --color="white" --width="1100px" logo="My Logo" />
+<div class="wrapper">
+  <Header --background="#323232" --color="white" --width="1100px" logo="My Logo" />
 
-<slot />
+  {#if $page.route.id === '/'}
+    <Slider />
+  {/if}
 
-<Footer --padding="3rem" />
+  <main>
+    <slot />
+  </main>
+
+  <Footer --padding="3rem" />
+</div>
 
 <BackToTop --background="var(--light)" />

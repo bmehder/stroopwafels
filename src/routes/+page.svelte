@@ -1,13 +1,7 @@
 <script lang="ts">
-  import Slider from '$lib/Slider/Slider.svelte'
   import Sveltetube from '$lib/Sveltetube.svelte'
   import Prism from '$lib/Prism/Prism.svelte'
-  import { viewport } from '$lib/viewport'
 </script>
-
-<div>
-  <Slider color="white" />
-</div>
 
 <main>
   <section>
@@ -36,11 +30,7 @@
     <div>
       <h2>Prism</h2>
       <Prism code="const enterDesignMode = () => document.designMode = 'on'" />
-      <div
-        use:viewport={{}}
-        on:enterViewport={() => console.log('Enter viewport')}
-        on:exitViewport={() => console.log('Exit viewport')}
-      >
+      <div>
         <Prism
           code={`
     // TypeScript
@@ -59,3 +49,9 @@
     </div>
   </section>
 </main>
+
+<style>
+  :global(.modal-background, .modal) {
+    margin-top: 0;
+  }
+</style>

@@ -3,7 +3,7 @@
 
   import DarkMode from '../DarkMode.svelte'
 
-  type Items = { name: string; url?: string; children?: Items }[]
+  type Items = { name: string; url?: string; target?: string; children?: Items }[]
 
   export let items: Items
   export let logo: string = 'Logo'
@@ -18,7 +18,9 @@
   <ul>
     {#each items as item}
       <li>
-        <a on:click={handleClick} href={item.url}>{@html item.name}</a>
+        <a on:click={handleClick} href={item.url} target={item.target}
+          >{@html item.name}</a
+        >
         {#if item.children}
           <ul>
             {#each item.children as childItem}

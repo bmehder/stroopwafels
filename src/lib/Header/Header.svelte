@@ -5,7 +5,7 @@
   import Nav from './Nav.svelte'
   import Hamburger from './Hamburger.svelte'
 
-  type Items = { name: string; url?: string; children?: Items }[]
+  type Items = { name: string; url?: string; target?: string; children?: Items }[]
 
   export let items: Items = [
     { name: 'Home', url: '/' },
@@ -16,6 +16,15 @@
         { name: 'Team', url: '/team' },
         { name: 'Careers', url: '/careers' },
       ],
+    },
+    {
+      name: 'NPM',
+      url: 'https://www.npmjs.com/package/stroopwafels',
+      target: '_blank',
+    },
+    {
+      name: 'Sidebar',
+      url: '/sidebar',
     },
   ]
   export let logo: string = 'Logo'

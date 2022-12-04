@@ -1,17 +1,4 @@
-<script lang="ts">
-  let isOutline: boolean
-  let isBackground: boolean
-
-  const handleOutline = () => (isOutline = !isOutline)
-  const handleBackground = () => (isBackground = !isBackground)
-</script>
-
-<aside>
-  <button on:click={handleOutline}>Background</button>
-  <button on:click={handleBackground}>Outline</button>
-</aside>
-
-<main class:isOutline class:isBackground>
+<section>
   <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
 
   <h2>Tempora nisi dolores doloremque</h2>
@@ -20,7 +7,7 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
     doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse voluptatem
     delectus repudiandae dolor facere, quaerat temporibus recusandae eligendi animi
-    ipsa ea. Eos neque at <a href="">reiciendis</a> dolore voluptatibus dicta ipsam quia
+    ipsa ea. Eos neque at <a href="/">reiciendis</a> dolore voluptatibus dicta ipsam quia
     beatae suscipit in deleniti, facilis quo doloribus esse itaque rem nam, aspernatur,
     ut molestiae possimus ducimus laboriosam. Numquam voluptas error distinctio eum officia
     alias qui tempore eveniet quibusdam obcaecati? Quae voluptates soluta assumenda animi
@@ -28,13 +15,9 @@
     earum saepe accusantium non reprehenderit, molestias culpa, debitis tempora facilis
     impedit excepturi unde.
   </p>
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-    <li>Three</li>
-    <li>Four</li>
-  </ul>
+</section>
 
+<section>
   <div class="grid columns">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
@@ -61,7 +44,14 @@
       reprehenderit, molestias culpa, debitis tempora facilis impedit excepturi unde.
     </p>
   </div>
+  <blockquote>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam sequi veniam eum
+    praesentium harum ad maxime quod ipsam officiis nisi, ab iusto autem atque
+    sapiente obcaecati ex repellat tempore velit similique. Iste!
+  </blockquote>
+</section>
 
+<section>
   <div class="grid columns">
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
@@ -100,7 +90,9 @@
       reprehenderit, molestias culpa, debitis tempora facilis impedit excepturi unde.
     </p>
   </div>
+</section>
 
+<section class="full-bleed">
   <h3>Secondary Heading</h3>
 
   <p>
@@ -115,13 +107,9 @@
     dolores repellat earum saepe accusantium non reprehenderit, molestias culpa,
     debitis tempora facilis impedit excepturi unde.
   </p>
+</section>
 
-  <blockquote>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam sequi veniam eum
-    praesentium harum ad maxime quod ipsam officiis nisi, ab iusto autem atque
-    sapiente obcaecati ex repellat tempore velit similique. Iste!
-  </blockquote>
-
+<section>
   <h2>Subheading</h2>
 
   <h3>Secondary Heading</h3>
@@ -145,7 +133,9 @@
     <li>Three</li>
     <li>Four</li>
   </ol>
+</section>
 
+<section>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nisi dolores
     doloremque iure assumenda tenetur nobis eligendi velit corporis. Esse voluptatem
@@ -160,28 +150,4 @@
   </p>
 
   <button>Button</button>
-</main>
-
-<style>
-  /* Controls */
-  aside {
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    transition: opacity 100ms;
-  }
-  aside:hover {
-    opacity: 1;
-  }
-  button {
-    padding-block: 0.5rem;
-    padding-inline: 1.5rem;
-  }
-  .isOutline > * {
-    background-color: tomato;
-    color: white;
-  }
-  .isBackground > * {
-    outline: 1px solid tomato;
-  }
-</style>
+</section>
