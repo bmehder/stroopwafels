@@ -44,8 +44,9 @@
 <style>
   aside {
     max-width: 100%;
-    border: 1px solid #ddd;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    background-color: white;
+    color: var(--black);
   }
   ul {
     display: flex;
@@ -61,7 +62,7 @@
     cursor: pointer;
   }
   .active {
-    background: var(--color, tomato);
+    background: var(--color, var(--light));
   }
   div {
     padding: 1rem 1.5rem;

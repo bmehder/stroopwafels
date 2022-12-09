@@ -60,7 +60,7 @@
   }
   li {
     position: relative;
-    color: white;
+    color: var(--color);
   }
   li:hover ul {
     display: block;
@@ -73,7 +73,7 @@
     margin-left: -1.5rem;
     padding-block: 1rem;
     padding-inline: 1.5rem;
-    background-color: #323232;
+    background-color: var(--background, var(--black));
     z-index: 1;
   }
   ul ul li {
@@ -84,7 +84,7 @@
   }
   a {
     cursor: pointer;
-    color: white;
+    color: var(--color, white);
     text-decoration: none;
   }
   a:hover {
@@ -108,7 +108,7 @@
     }
     .isOpen li {
       padding-bottom: 1rem;
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid var(--color, white);
     }
     ul ul {
       position: relative;

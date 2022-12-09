@@ -3,7 +3,7 @@
   --medium: #e94057;
   --light: #f27121;
   --black: #323232;
-  --white: #eff0f4;
+  --white: #fff;
   --spacing: 1.5rem;
   --shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
   --radius: 0.25rem;
@@ -146,6 +146,19 @@ section>div, .auto-format {
   display: flex;
   flex-direction: column;
   gap: var(--spacing);
+}
+
+.boxed {
+  margin-top: 0;
+  padding-block: var(--spacing);
+  padding-inline: calc(var(--spacing) * 2);
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+main:has(.boxed) {
+  padding-block: 0;
 }
 
 .grid {

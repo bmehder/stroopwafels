@@ -146,7 +146,7 @@
   h2 {
     position: absolute;
     margin: 0;
-    color: var(--dark, #323232);
+    color: var(--color, --dark);
     font-size: 10vw;
     line-height: 1.1em;
     text-align: center;

@@ -8,7 +8,7 @@
 </script>
 
 <div class="wrapper">
-  <Header --background="#323232" --color="white" --width="1100px" logo="My Logo" />
+  <Header --background="white" --color="black" --width="1100px" logo="My Logo" />
 
   {#if $page.route.id === '/'}
     <Slider />

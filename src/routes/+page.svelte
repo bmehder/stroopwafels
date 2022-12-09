@@ -2,13 +2,19 @@
   import Sveltetube from '$lib/Sveltetube.svelte'
   import Prism from '$lib/Prism/Prism.svelte'
   import Modal from '$lib/Modal.svelte'
+  import Switch from '$lib/Switch.svelte'
+  import type { SvelteComponentTyped } from 'svelte'
 
-  let isOpen = false
+  let modal: SvelteComponentTyped
 </script>
 
 <main>
   <section>
     <div>
+      <Switch
+        on:checked={() => console.log('Checked on')}
+        on:unchecked={() => console.log('Checked off')}
+      />
       <h2>SvelteTube</h2>
       <div class="grid auto">
         <Sveltetube
@@ -57,14 +63,11 @@
       <h2>Modal</h2>
       <div>
         <Modal
-          bind:isOpen
-          on:click={() => (isOpen = false)}
-          on:escape={() => (isOpen = false)}
+          bind:this={modal}
           --background="var(--white)"
           --color="var(--black)"
           --closeBackground="var(--light)"
           --closeColor="white"
-          --backdrop="rgba(0, 0, 0, 0.9)"
         >
           <div class="auto-format">
             <h2>I am a Modal!</h2>
@@ -84,7 +87,7 @@
             </p>
           </div></Modal
         >
-        <button on:click={() => (isOpen = true)}>Open Modal</button>
+        <button on:click={() => modal.openModal()}>Open Modal</button>
       </div>
     </div>
   </section>

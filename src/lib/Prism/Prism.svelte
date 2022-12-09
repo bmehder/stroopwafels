@@ -118,7 +118,7 @@
     right: 0.25rem;
     padding: 0.25rem;
     background-color: transparent;
-    color: white;
+    color: var(--color, white);
     border: none;
     border-bottom-left-radius: 4px;
     cursor: pointer;
