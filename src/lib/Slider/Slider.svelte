@@ -48,7 +48,9 @@
 
   const stopAutoPlay = () => clearInterval(intervalId)
 
-  const toggleAutoplay = () => (isAutoplay = !isAutoplay)
+  const toggleAutoplay = () => {
+    isAutoplay = !isAutoplay
+  }
 
   const startAutoPlay = (node: HTMLElement, isAutoplay: boolean) => {
     const play = () => (intervalId = window.setInterval(moveSlides, duration))

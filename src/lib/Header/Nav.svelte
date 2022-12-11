@@ -98,9 +98,6 @@
     ul {
       display: none;
     }
-    :global(body:has(.isOpen)) {
-      position: fixed;
-    }
     .isOpen ul {
       display: flex;
       flex-direction: column;

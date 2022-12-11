@@ -68,9 +68,9 @@
     padding-inline: var(--padding, 1.5rem);
   }
   .isOpen {
-    /* position: fixed; */
+    position: absolute;
     width: 100%;
-    height: 101%;
+    height: 100%;
     min-height: 100vh;
     z-index: 10;
   }

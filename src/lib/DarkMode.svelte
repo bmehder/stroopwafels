@@ -25,7 +25,12 @@
   }
 </script>
 
-<div on:click={handleClick} on:keypress use:init>
+<a
+  href={'#'}
+  use:init
+  on:click={handleClick}
+  on:keypress={evt => evt.key === 'Enter' && handleClick}
+>
   {#if isDark}
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,12 +62,15 @@
       />
     </svg>
   {/if}
-</div>
+</a>
 
 <style>
   svg {
     width: var(--width, 1.5rem);
     height: auto;
     cursor: pointer;
+  }
+  a {
+    color: unset;
   }
 </style>

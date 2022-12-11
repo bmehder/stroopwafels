@@ -11,7 +11,12 @@
   }
 </script>
 
-<div class:visible={$isShowBackToTop} on:click={handleClick} on:keypress>
+<a
+  href={'#'}
+  class:visible={$isShowBackToTop}
+  on:click|preventDefault={handleClick}
+  on:keypress={evt => evt.key === 'Enter' && handleClick}
+>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -24,10 +29,10 @@
       clip-rule="evenodd"
     />
   </svg>
-</div>
+</a>
 
 <style>
-  div {
+  a {
     position: fixed;
     width: 3rem;
     height: 3rem;

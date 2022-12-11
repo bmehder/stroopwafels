@@ -10,8 +10,7 @@
 {#if isAutoplay}
   <svg
     on:click
-    on:keypress
-    class:isAutoplay
+    on:keydown
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -26,7 +25,7 @@
 {:else}
   <svg
     on:click
-    on:keypress
+    on:keydown
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
@@ -48,9 +47,6 @@
     right: 1rem;
     z-index: 1;
     cursor: pointer;
-    color: var(--dark);
-  }
-  .isAutoplay {
     color: var(--light);
   }
 </style>

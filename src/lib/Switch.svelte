@@ -8,7 +8,11 @@
   $: isChecked ? dispatch('checked') : dispatch('unchecked')
 </script>
 
-<input type="checkbox" bind:checked={isChecked} />
+<input
+  type="checkbox"
+  bind:checked={isChecked}
+  on:keypress={evt => evt.key === 'Enter' && (isChecked = !isChecked)}
+/>
 
 <style>
   input {
@@ -39,5 +43,8 @@
   }
   input:checked::after {
     left: 70%;
+  }
+  input:focus {
+    outline: auto;
   }
 </style>

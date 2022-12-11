@@ -4,6 +4,7 @@
   import Modal from '$lib/Modal.svelte'
   import Switch from '$lib/Switch.svelte'
   import type { SvelteComponentTyped } from 'svelte'
+  import { clickOutside } from '$lib/clickoutside'
 
   let modal: SvelteComponentTyped
 </script>
@@ -88,6 +89,9 @@
           </div></Modal
         >
         <button on:click={() => modal.openModal()}>Open Modal</button>
+        <button use:clickOutside={() => console.log('clicked outside')}
+          >Click Outside</button
+        >
       </div>
     </div>
   </section>

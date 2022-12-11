@@ -17,6 +17,7 @@ A collection of Svelte components
 - **Tooltip**: A tooltip with props including a message and a direction. Custom properties include --background and --color.
 - **Viewport action**: an action that can be added to a DOM element. The action will return two custom events: onEnterViewport and onExitViewport.
 - **ClickOutside action**: an action that will listen for a click on any element except the element the action was applied to. Useful for things like closing a modal by clicking outside of the modal.
+- **Outliner**: A fixed button (top left) that shows on hover and toggles on/off an outline for every element on the page. It is meant to be used as a dev component. Custom properties include --background, --color, and -spacing.
 
 # Demo
 

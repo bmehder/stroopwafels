@@ -83,6 +83,64 @@ blockquote {
   font-style: italic;
 }
 
+/* Forms */
+form {
+  --valid: 1px solid hsl(143, 89%, 50%);
+  --placeholder: 0.7;
+  --max-width: 50%;
+
+  display: grid;
+  gap: var(--spacing);
+}
+
+@media (min-width: 769px) {
+  form {
+    max-width: var(--max-width);
+  }
+}
+
+.form-group {
+  display: grid;
+  gap: var(--half-spacing);
+}
+
+input,
+textarea {
+  padding: var(--half-spacing);
+}
+
+input:valid,
+textarea:valid {
+  outline: var(--valid);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  opacity: var(--placeholder);
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  gap: var(--half-spacing);
+}
+
+.form-submit:hover,
+.form-submit:disabled {
+  background-color: var(--dark);
+}
+
+.form-submit:disabled {
+  font-weight: normal;
+  text-transform: none;
+  border-radius: var(--radius);
+  user-select: none;
+  cursor: not-allowed;
+}
+label {
+  font-weight: bold;
+}
+
 input,
 textarea,
 button,
@@ -195,7 +253,7 @@ main:has(.boxed) {
 
 .full-bleed {
   margin-block: calc(var(--spacing) * 1.5);
-  padding-block: calc(var(--spacing) * 1.5);
+  padding-block: calc(var(--spacing) * 2);
   background-color: var(--dark);
   color: var(--white);
   box-shadow: 0 0 0 100vmax var(--dark);
