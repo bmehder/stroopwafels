@@ -18,7 +18,7 @@
     toggleDarkMode()
     setThemeOption()
   }
-  const init = (_: HTMLElement) => {
+  const init = (_: HTMLAnchorElement) => {
     isDark = isDarkMode()
     isDark && document.body.classList.add('dark')
     !isDark && document.body.classList.remove('dark')
@@ -28,7 +28,7 @@
 <a
   href={'#'}
   use:init
-  on:click={handleClick}
+  on:click|preventDefault={handleClick}
   on:keypress={evt => evt.key === 'Enter' && handleClick}
 >
   {#if isDark}

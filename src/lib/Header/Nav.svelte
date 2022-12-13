@@ -47,12 +47,14 @@
     width: 100%;
     display: flex;
     align-items: center;
+    gap: var(--spacing);
   }
   nav h1 a:hover {
     text-decoration: none;
   }
   ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     gap: 2rem;
     margin: 0;

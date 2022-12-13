@@ -10,7 +10,7 @@
 
 <style>
   :global(body:has(.isOn) *) {
-    outline: 1px solid var(--background, tomato);
+    outline: 1px solid var(--background, tomato) !important;
   }
   span {
     position: fixed;
@@ -22,6 +22,7 @@
     color: var(--color, white);
     opacity: 0;
     transition: opacity 100ms ease-in-out;
+    cursor: pointer;
   }
   span:hover {
     opacity: 1;
