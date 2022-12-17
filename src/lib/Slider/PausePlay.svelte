@@ -5,7 +5,7 @@
     evt.key === 'p' && (isAutoplay = !isAutoplay)
 </script>
 
-<svelte:window on:keypress={handleKeypress} />
+<!-- <svelte:window on:keypress={handleKeypress} /> -->
 
 {#if isAutoplay}
   <svg

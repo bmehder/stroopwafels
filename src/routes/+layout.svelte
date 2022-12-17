@@ -14,7 +14,7 @@
   <Header --background="white" --color="black" --width="1100px" logo="My Logo" />
 
   {#if $page.route.id === '/'}
-    <Slider isAutoplay={true} />
+    <Slider />
   {/if}
 
   <main>

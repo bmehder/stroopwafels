@@ -39,21 +39,49 @@
 
   export let duration = 6000
   export let color = 'white'
-  export let isAutoplay = false
+  export let isAutoplay = true
 
   let container: HTMLDivElement
   let innerWidth: number
   let intervalId: number
   let xPosition = 0
 
-  const stopAutoPlay = () => clearInterval(intervalId)
+  const stopAutoPlay = () => {
+    clearInterval(intervalId)
+    isAutoplay = false
+  }
 
   const toggleAutoplay = () => {
     isAutoplay = !isAutoplay
+
+    isAutoplay ? setLocalStorage(true) : setLocalStorage(false)
+  }
+
+  // TEMP
+  // localStorage.setItem('isAutoPlaySetting', JSON.stringify('false'))
+
+  const setLocalStorage = (choice: boolean) => {
+    localStorage.setItem('isAutoPlaySetting', JSON.stringify(choice))
+  }
+
+  const getLocalStorage = (isAutoPlaySetting: string) => {
+    if (!localStorage.getItem(isAutoPlaySetting)) return null
+
+    const value: string = localStorage.getItem(isAutoPlaySetting) ?? ''
+
+    return value === 'true'
   }
 
   const startAutoPlay = (node: HTMLElement, isAutoplay: boolean) => {
-    const play = () => (intervalId = window.setInterval(moveSlides, duration))
+    const play = () => {
+      intervalId = window.setInterval(moveSlides, duration)
+    }
+
+    const isAutoPlaySetting: boolean | null = getLocalStorage('isAutoPlaySetting')
+
+    if (isAutoPlaySetting != null) {
+      isAutoplay = isAutoPlaySetting
+    }
 
     isAutoplay ? play() : stopAutoPlay()
 

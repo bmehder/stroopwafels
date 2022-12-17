@@ -21,6 +21,7 @@
 <style>
   i {
     color: white;
+    cursor: pointer;
   }
   i.isOpen {
     padding-top: 0.8rem;
