@@ -6,7 +6,7 @@ A collection of Svelte components
 
 - **SvelteTube**: a lazy loading, responsive Youtube video player. Props include a YouTube video id, poster image title attribute, play icon color, poster image, border-radius, and box-shadow.
 - **Prism**: syntax highlighting for code snippets with a copy button. Props include the code to be displayed. Custom properties inclued --color for the button background color.
-- **Slider**: A progressively enhanced Slider using scroll-snap. JS allows the user to play/pause using the letter "p" or with the icon, use the left and right arrows (or left and right buttons) to change slides, and autoplay. Props include the slides/text/position, duration, color, and isAutoplay. Custom properties inclued --height and --color.
+- **Slider**: A progressively enhanced Slider using scroll-snap. JS allows the user to use the left and right arrows (or left and right buttons) to change slides. Autoplay is on by default, but the user can play/pause, and the setting is saved to Local Storage. Props include the slides/text/position, duration, and color. Custom properties inclued --height and --color.
 - **Tabs**: A component for grouping content in to tabs. Props include an array of tabs with heading/content. Custom properties include --background, --color, and --shadow.
 - **Header**: A responsive Header with dropdown items. Props include an array of menu items with name/url/children, and a logo (text or html). Custom properties include --width, --background, and --padding.
 - **Footer**: A reponsive Footer with a default slot. Custom properies inclue --width, --background, --color, --padding, and --spacing.
